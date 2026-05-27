@@ -406,6 +406,42 @@
       padding: 18px;
     }
 
+    .long-heading {
+      white-space: normal;
+    }
+
+    .travel-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(255, 248, 236, 0.92), rgba(255, 248, 236, 0.72)),
+        rgba(255, 248, 236, 0.74);
+      box-shadow: 7px 7px 0 rgba(34, 29, 25, 0.05);
+    }
+
+    .travel-panel::after {
+      content: "";
+      position: absolute;
+      right: -56px;
+      bottom: -92px;
+      width: min(480px, 52%);
+      height: 430px;
+      background: url("assets/horse-portrait.jpg") center / cover no-repeat;
+      filter: grayscale(1) contrast(1.18) sepia(0.18);
+      mix-blend-mode: multiply;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .travel-panel p {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+    }
+
     .people-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -512,6 +548,7 @@
       .section-grid, .facts, .people-grid, .people-list, .date-card, .ticket-options { grid-template-columns: 1fr; }
       .section-media { gap: 22px; }
       .section-photo { max-width: 420px; }
+      .travel-panel::after { width: 70%; opacity: 0.13; }
       .date-info { border-right: 0; border-bottom: 1px solid var(--line); }
       .ticket-card { border-right: 0; border-bottom: 1px solid var(--line); }
       section.content { padding: 66px 24px; }
@@ -543,6 +580,7 @@
         <div class="nav-links">
           <a href="#om">Om</a>
           <a href="#biljetter">Biljetter</a>
+          <a href="#hitta-hit">Hitta hit</a>
           <a href="#medverkande">Medverkande</a>
           <a href="#kontakt">Kontakt</a>
         </div>
@@ -551,7 +589,7 @@
 
     <section class="hero" id="top">
       <div class="hero-stage">
-        <img src="assets/ridhuset.jpg" alt="Interiör från ridhuset på Orlångens Ridsällskap" />
+        <img src="assets/hero-horse-wall.jpeg" alt="Häst och människa i ridhus" />
       </div>
 
       <div class="hero-info">
@@ -572,7 +610,7 @@
         <div class="section-grid">
           <div class="section-media">
             <h2>Om operan</h2>
-            <img class="section-photo" src="assets/horse-portrait.jpg" alt="Häst och människa i ridhus" />
+            <img class="section-photo" src="assets/ridhuset.jpg" alt="Interiör från ridhuset på Orlångens Ridsällskap" />
           </div>
           <div>
             <p class="body-large">
@@ -651,6 +689,17 @@
         </div>
       </section>
 
+      <section class="content" id="hitta-hit">
+        <div class="section-grid">
+          <h2 class="long-heading">Hur jag tar mig till Orlångens Ridsällskap</h2>
+          <div class="travel-panel">
+            <p class="body-large">
+              Det går att ta sig till Orlångens Ridsällskap med bil. Mer information om parkering kommer. Du kan även åka kollektivt. Ta pendeln till Huddinge C och ta busslinje 744 eller 709 till Balingstavägen. Följ sedan allén på andra sidan vägen tills du anländer till Orlångens Ridsällskap.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="content" id="medverkande">
         <div class="section-grid">
           <h2>Medverkande</h2>
@@ -714,7 +763,7 @@
           </a>
 
           <a class="person-row" href="people/oscar-engvall.html">
-            <img src="assets/oscar.jpg" alt="Oscar Engvall" onerror="this.onerror=null;this.src='assets/jackie-candy-drawing.jpg';" />
+            <img src="assets/oscar.jpeg" alt="Oscar Engvall" onerror="this.onerror=null;this.src='assets/jackie-candy-drawing.jpg';" />
             <div>
               <h3>Oscar Engvall</h3>
               <div class="role">Baryton/bas</div>
@@ -762,7 +811,7 @@
           </a>
 
           <a class="person-row" href="people/adele-kosman.html">
-            <img src="assets/adele.jpg" alt="Adele Kosman" onerror="this.onerror=null;this.src='assets/jackie-candy-drawing.jpg';" />
+            <img src="assets/adele.jpeg" alt="Adele Kosman" onerror="this.onerror=null;this.src='assets/jackie-candy-drawing.jpg';" />
             <div>
               <h3>Adele Kosman</h3>
               <div class="role">Ljudtekniker</div>
@@ -792,7 +841,7 @@
           <h2>Stöd & samarbeten</h2>
           <div>
             <p class="supporters">
-              Projektet stöds av Kulturrådet, Konstnärsnämnden, Region Stockholm, Huddinge kommun, Helge Ax:son Johnsons stiftelse och Föreningen Svenska Tonsättare. Projektet har även samarbeten med bland andra Orlångens Ridsällskap, Balettakademien Stockholm, Transit Kulturinkubator, ABF Stockholm och JILLAT Samiskt danscentrum.
+              Projektet stöds av Kulturrådet, Konstnärsnämnden, Region Stockholm, Huddinge kommun, Helge Ax:son Johnsons stiftelse, Föreningen Svenska Tonsättare och Svensk Musik. Projektet har även samarbeten med bland andra Orlångens Ridsällskap, Balettakademien Stockholm, Transit Kulturinkubator, ABF Stockholm och JILLAT Samiskt danscentrum.
             </p>
           </div>
         </div>
