@@ -157,7 +157,7 @@
     .hero-info::before {
       content: "";
       position: absolute;
-      inset: 7% -12% -10% 25%;
+      inset: 6% -2% -8% 8%;
       background: url("assets/jackie-candy-drawing.jpg") center / contain no-repeat;
       filter: grayscale(1) contrast(1.18);
       mix-blend-mode: multiply;
@@ -354,6 +354,13 @@
       color: var(--accent-deep);
     }
 
+    .travel-note {
+      margin: 14px 0 0;
+      color: rgba(34, 29, 25, 0.68);
+      font-size: 15px;
+      line-height: 1.42;
+    }
+
     .ticket-days {
       display: grid;
       gap: 18px;
@@ -404,42 +411,6 @@
       align-items: center;
       justify-content: center;
       padding: 18px;
-    }
-
-    .long-heading {
-      white-space: normal;
-    }
-
-    .travel-panel {
-      position: relative;
-      overflow: hidden;
-      min-height: 320px;
-      padding: 34px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(90deg, rgba(255, 248, 236, 0.92), rgba(255, 248, 236, 0.72)),
-        rgba(255, 248, 236, 0.74);
-      box-shadow: 7px 7px 0 rgba(34, 29, 25, 0.05);
-    }
-
-    .travel-panel::after {
-      content: "";
-      position: absolute;
-      right: -56px;
-      bottom: -92px;
-      width: min(480px, 52%);
-      height: 430px;
-      background: url("assets/horse-portrait.jpg") center / cover no-repeat;
-      filter: grayscale(1) contrast(1.18) sepia(0.18);
-      mix-blend-mode: multiply;
-      opacity: 0.2;
-      pointer-events: none;
-    }
-
-    .travel-panel p {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
     }
 
     .people-grid {
@@ -548,7 +519,6 @@
       .section-grid, .facts, .people-grid, .people-list, .date-card, .ticket-options { grid-template-columns: 1fr; }
       .section-media { gap: 22px; }
       .section-photo { max-width: 420px; }
-      .travel-panel::after { width: 70%; opacity: 0.13; }
       .date-info { border-right: 0; border-bottom: 1px solid var(--line); }
       .ticket-card { border-right: 0; border-bottom: 1px solid var(--line); }
       section.content { padding: 66px 24px; }
@@ -580,7 +550,6 @@
         <div class="nav-links">
           <a href="#om">Om</a>
           <a href="#biljetter">Biljetter</a>
-          <a href="#hitta-hit">Hitta hit</a>
           <a href="#medverkande">Medverkande</a>
           <a href="#kontakt">Kontakt</a>
         </div>
@@ -630,6 +599,9 @@
               <div class="fact">
                 <strong>Plats</strong>
                 <a href="https://www.google.com/maps/search/?api=1&query=Orl%C3%A5ngens%20Rids%C3%A4llskap%20Huddinge" target="_blank" rel="noopener">Orlångens Ridsällskap, Huddinge</a>
+                <p class="travel-note">
+                  Det går att ta sig till Orlångens Ridsällskap med bil. Mer information om parkering kommer. Du kan även åka kollektivt. Ta pendeln till Huddinge C och ta busslinje 744 eller 709 till Balingstavägen. Följ sedan allén på andra sidan vägen tills du anländer till Orlångens Ridsällskap.
+                </p>
               </div>
               <div class="fact">
                 <strong>Datum</strong>
@@ -685,17 +657,6 @@
                 </div>
               </article>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="content" id="hitta-hit">
-        <div class="section-grid">
-          <h2 class="long-heading">Hur jag tar mig till Orlångens Ridsällskap</h2>
-          <div class="travel-panel">
-            <p class="body-large">
-              Det går att ta sig till Orlångens Ridsällskap med bil. Mer information om parkering kommer. Du kan även åka kollektivt. Ta pendeln till Huddinge C och ta busslinje 744 eller 709 till Balingstavägen. Följ sedan allén på andra sidan vägen tills du anländer till Orlångens Ridsällskap.
-            </p>
           </div>
         </div>
       </section>
