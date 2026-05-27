@@ -190,15 +190,20 @@
       z-index: 1;
     }
 
-    .kicker {
-      display: inline-block;
+    .hero-dates {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
       width: fit-content;
-      margin: 0 0 16px;
+      margin: 0 0 18px;
       color: var(--accent);
-      font-size: 16px;
+      font-size: 21px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .hero-dates span {
       white-space: nowrap;
     }
 
@@ -215,7 +220,7 @@
 
     .hero-title {
       width: min(100%, clamp(340px, 42vw, 620px));
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       line-height: 0;
     }
 
@@ -330,6 +335,10 @@
       font-size: clamp(21px, 1.8vw, 28px);
       line-height: 1.22;
       color: var(--ink);
+    }
+
+    #om .body-large {
+      margin-bottom: 34px;
     }
 
     .facts {
@@ -636,10 +645,10 @@
         opacity: 0.56;
       }
 
-      .kicker {
-        margin-bottom: 10px;
-        font-size: 13px;
-        white-space: normal;
+      .hero-dates {
+        gap: 2px;
+        margin-bottom: 16px;
+        font-size: 18px;
       }
 
       h1 {
@@ -819,10 +828,14 @@
       </div>
 
       <div class="hero-info">
-        <p class="kicker">28 / 29 / 30 augusti 2026</p>
         <h1 class="hero-title">
           <img class="hero-logo-large" src="assets/hastoperan-logo.png" alt="Hästoperan" />
         </h1>
+        <p class="hero-dates">
+          <span>28.08.2026</span>
+          <span>29.08.2026</span>
+          <span>30.08.2026</span>
+        </p>
         <div class="button-row">
           <a class="button" href="#biljetter">Köp biljetter</a>
           <a class="button secondary" href="#om">Läs mer</a>
