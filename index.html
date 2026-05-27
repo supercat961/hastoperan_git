@@ -70,10 +70,15 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 15px;
+      display: inline-flex;
+      align-items: center;
     }
 
-    .brand span {
-      color: var(--accent);
+    .brand-logo {
+      width: 112px;
+      height: auto;
+      mix-blend-mode: multiply;
+      filter: grayscale(1) contrast(1.16);
     }
 
     .nav-links {
@@ -553,6 +558,10 @@
         letter-spacing: 0.1em;
       }
 
+      .brand-logo {
+        width: 104px;
+      }
+
       .hero {
         display: block;
         min-height: auto;
@@ -766,7 +775,9 @@
   <div class="page">
     <header>
       <nav>
-        <a class="brand" href="#top">HÄST<span>OPERAN</span></a>
+        <a class="brand" href="#top" aria-label="Hästoperan">
+          <img class="brand-logo" src="assets/hastoperan-logo.png" alt="Hästoperan" />
+        </a>
         <div class="nav-links">
           <a href="#om">Om</a>
           <a href="#biljetter">Biljetter</a>
