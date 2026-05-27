@@ -94,9 +94,9 @@
 
     .nav-links a {
       color: rgba(34, 29, 25, 0.64);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.045em;
       text-transform: uppercase;
     }
 
@@ -193,9 +193,9 @@
     .kicker {
       display: inline-block;
       width: fit-content;
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       color: var(--accent);
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -205,16 +205,17 @@
     h1 {
       margin: 0 0 24px;
       color: var(--ink);
-      font-family: var(--hand);
+      font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(58px, 6.8vw, 94px);
       line-height: 0.96;
       letter-spacing: 0;
-      font-weight: 700;
+      font-weight: 400;
       white-space: nowrap;
     }
 
     .hero-title {
       width: min(100%, clamp(340px, 42vw, 620px));
+      margin-bottom: 16px;
       line-height: 0;
     }
 
@@ -224,15 +225,6 @@
       mix-blend-mode: multiply;
       filter: grayscale(1) contrast(1.12) sepia(0.1);
       opacity: 0.94;
-    }
-
-    .hero-text {
-      max-width: 590px;
-      color: rgba(34, 29, 25, 0.78);
-      font-family: var(--hand);
-      font-size: clamp(25px, 2vw, 34px);
-      line-height: 1.08;
-      margin: 0 0 32px;
     }
 
     .button-row { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -335,17 +327,17 @@
 
     .body-large {
       margin-top: 0;
-      font-family: var(--hand);
-      font-size: clamp(27px, 2.2vw, 36px);
-      line-height: 1.04;
+      font-size: clamp(21px, 1.8vw, 28px);
+      line-height: 1.22;
       color: var(--ink);
     }
 
     .facts {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: minmax(0, 1fr) max-content;
       gap: 14px;
       margin-top: 34px;
+      align-items: start;
     }
 
     .fact, .ticket-card, .date-card {
@@ -356,6 +348,10 @@
 
     .fact {
       padding: 20px;
+    }
+
+    .date-fact {
+      width: 245px;
     }
 
     .fact strong {
@@ -408,11 +404,11 @@
 
     .date-info .day {
       color: var(--ink);
-      font-family: var(--hand);
-      font-size: clamp(42px, 4.2vw, 62px);
-      line-height: 0.86;
-      letter-spacing: 0;
-      font-weight: 700;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 3vw, 42px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-weight: 400;
       white-space: nowrap;
     }
 
@@ -523,7 +519,19 @@
       margin-bottom: 10px;
     }
 
-    .supporters { max-width: 760px; }
+    #stod .section-grid {
+      gap: 74px;
+    }
+
+    #stod h2 {
+      max-width: 360px;
+      white-space: normal;
+    }
+
+    .supporters {
+      max-width: 690px;
+      line-height: 1.38;
+    }
 
     footer {
       max-width: var(--max);
@@ -630,7 +638,7 @@
 
       .kicker {
         margin-bottom: 10px;
-        font-size: 11px;
+        font-size: 13px;
         white-space: normal;
       }
 
@@ -638,12 +646,6 @@
         margin-bottom: 14px;
         font-size: clamp(42px, 14vw, 56px);
         line-height: 0.95;
-      }
-
-      .hero-text {
-        margin-bottom: 22px;
-        font-size: 26px;
-        line-height: 1.08;
       }
 
       .button-row {
@@ -696,8 +698,8 @@
       }
 
       .body-large {
-        font-size: 28px;
-        line-height: 1.05;
+        font-size: 20px;
+        line-height: 1.25;
       }
 
       .facts {
@@ -708,6 +710,10 @@
       .fact {
         padding: 16px;
         box-shadow: 4px 4px 0 rgba(34, 29, 25, 0.05);
+      }
+
+      .date-fact {
+        width: 100%;
       }
 
       .travel-note {
@@ -727,7 +733,7 @@
       }
 
       .date-info .day {
-        font-size: 44px;
+        font-size: 36px;
         white-space: normal;
       }
 
@@ -817,9 +823,6 @@
         <h1 class="hero-title">
           <img class="hero-logo-large" src="assets/hastoperan-logo.png" alt="Hästoperan" />
         </h1>
-        <p class="hero-text">
-          En nyskriven opera i ett ridhus. Elektroakustisk musik, dans och episkt berättande möter hästens värld.
-        </p>
         <div class="button-row">
           <a class="button" href="#biljetter">Köp biljetter</a>
           <a class="button secondary" href="#om">Läs mer</a>
@@ -856,7 +859,7 @@
                   Det går att ta sig till Orlångens Ridsällskap med bil. Mer information om parkering kommer. Du kan även åka kollektivt. Ta pendeln till Huddinge C och ta busslinje 744 eller 709 till Balingstavägen. Följ sedan allén på andra sidan vägen tills du anländer till Orlångens Ridsällskap.
                 </p>
               </div>
-              <div class="fact">
+              <div class="fact date-fact">
                 <strong>Datum</strong>
                 28, 29 och 30 augusti 2026
               </div>
