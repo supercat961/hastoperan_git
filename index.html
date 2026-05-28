@@ -483,11 +483,6 @@
       filter: grayscale(1) contrast(1.12) sepia(0.12);
     }
 
-    .person-row.no-photo {
-      grid-template-columns: 1fr;
-      padding: 18px;
-    }
-
     .person-row h3 {
       margin: 0 0 4px;
       font-size: 17px;
@@ -778,11 +773,6 @@
         height: 66px;
       }
 
-      .person-row.no-photo {
-        grid-template-columns: 1fr;
-        padding: 14px;
-      }
-
       .person-row h3 {
         font-size: 16px;
         white-space: normal;
@@ -807,9 +797,6 @@
       .button { width: 100%; }
       .person-row {
         grid-template-columns: 60px 1fr;
-      }
-      .person-row.no-photo {
-        grid-template-columns: 1fr;
       }
       .person-row img {
         width: 60px;
@@ -1045,7 +1032,8 @@
             </div>
           </a>
 
-          <a class="person-row no-photo" href="people/gabriella-danerlov.html">
+          <a class="person-row" href="people/gabriella-danerlov.html">
+            <img src="assets/gabriella.jpg" alt="Gabriella Danerlöv" onerror="this.onerror=null;this.src='assets/jackie-candy-drawing.jpg';" />
             <div>
               <h3>Gabriella Danerlöv</h3>
               <div class="role">Kostymör</div>
