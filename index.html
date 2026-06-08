@@ -82,16 +82,16 @@
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 22px;
       flex-wrap: nowrap;
       justify-content: flex-end;
     }
 
     .nav-links a {
-      color: rgba(17, 17, 17, 0.58);
-      font-size: 12px;
-      font-weight: 650;
-      letter-spacing: 0.08em;
+      color: rgba(17, 17, 17, 0.78);
+      font-size: 14px;
+      font-weight: 760;
+      letter-spacing: 0.075em;
       text-transform: uppercase;
     }
 
@@ -154,11 +154,11 @@
     .hero-info::before {
       content: "";
       position: absolute;
-      inset: 10% -16% -4% 16%;
+      inset: 4% -14% -8% 4%;
       background: url("assets/jackie-candy-hero-bg.jpg") center / contain no-repeat;
       filter: grayscale(1) contrast(1.06);
       mix-blend-mode: multiply;
-      opacity: 0.055;
+      opacity: 0.16;
       pointer-events: none;
     }
 
@@ -186,11 +186,11 @@
       gap: 14px;
       flex-wrap: wrap;
       width: fit-content;
-      margin: 18px 0 22px;
+      margin: 22px 0 26px;
       color: var(--accent);
-      font-size: 13px;
+      font-size: 17px;
       font-weight: 720;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.095em;
       text-transform: uppercase;
     }
 
@@ -240,15 +240,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 40px;
-      padding: 0 16px;
+      min-height: 48px;
+      padding: 0 22px;
       color: #fff;
       background: var(--accent);
       border: 1px solid var(--accent-deep);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 720;
       text-transform: uppercase;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.085em;
       transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
     }
 
@@ -312,6 +312,20 @@
       border: 1px solid var(--line);
       filter: grayscale(1) contrast(1.08);
       opacity: 0.88;
+    }
+
+    .venue-feature {
+      margin: 34px 0 0;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: var(--horse-black);
+    }
+
+    .venue-feature img {
+      aspect-ratio: 16 / 6;
+      object-fit: cover;
+      object-position: center 48%;
+      filter: grayscale(1) contrast(1.08) brightness(0.9);
     }
 
     h2 {
@@ -393,29 +407,35 @@
 
     .ticket-days {
       display: grid;
-      gap: 10px;
-      margin-top: 22px;
+      gap: 12px;
+      margin-top: 24px;
     }
 
     .date-card {
       display: grid;
-      grid-template-columns: minmax(300px, 0.7fr) 1fr;
+      grid-template-columns: minmax(300px, 1fr) max-content;
       gap: 0;
       overflow: hidden;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    .date-card:hover {
+      border-color: rgba(169, 52, 36, 0.5);
+      background: #fbfbfa;
     }
 
     .date-info {
-      padding: 17px 20px;
+      padding: 22px 24px;
       border-right: 1px solid var(--line);
       background: var(--paper);
     }
 
     .date-info .day {
       color: var(--ink);
-      font-size: clamp(22px, 2.25vw, 32px);
+      font-size: clamp(28px, 2.75vw, 38px);
       line-height: 1;
       letter-spacing: 0;
-      font-weight: 620;
+      font-weight: 680;
       white-space: nowrap;
     }
 
@@ -431,14 +451,31 @@
     .ticket-options {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: flex-end;
+      min-width: 240px;
+      background: #fff;
     }
 
     .ticket-action {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 12px;
+      padding: 18px;
+      width: 100%;
+    }
+
+    .ticket-action .button {
+      width: 100%;
+      min-height: 56px;
+      padding: 0 28px;
+      font-size: 13px;
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .ticket-action .button:hover {
+      background: var(--accent);
+      border-color: var(--accent-deep);
     }
 
     .people-grid {
@@ -562,8 +599,10 @@
       .people-list { grid-template-columns: repeat(2, 1fr); }
       .section-media { gap: 22px; }
       .section-photo { max-width: 420px; }
+      .venue-feature img { aspect-ratio: 16 / 8; }
       .date-info { border-right: 0; border-bottom: 1px solid var(--line); }
       .ticket-card { border-right: 0; border-bottom: 1px solid var(--line); }
+      .ticket-options { min-width: 0; }
       section.content { padding: 46px 24px; }
       h1 { font-size: clamp(42px, 13.5vw, 76px); }
       h2 { font-size: clamp(28px, 7vw, 40px); }
@@ -622,7 +661,7 @@
 
       .hero-info::before {
         inset: -18% -30% 8% 10%;
-        opacity: 0.05;
+        opacity: 0.13;
       }
 
       .hero-info::after {
@@ -632,9 +671,9 @@
       }
 
       .hero-dates {
-        gap: 10px;
-        margin: 16px 0 18px;
-        font-size: 11px;
+        gap: 11px;
+        margin: 18px 0 20px;
+        font-size: 13px;
       }
 
       h1 {
@@ -648,9 +687,9 @@
       }
 
       .button {
-        min-height: 40px;
-        padding: 0 13px;
-        font-size: 11px;
+        min-height: 44px;
+        padding: 0 16px;
+        font-size: 12px;
       }
 
       main {
@@ -680,6 +719,14 @@
         aspect-ratio: 5 / 3;
         object-position: center 42%;
         opacity: 0.86;
+      }
+
+      .venue-feature {
+        margin-top: 24px;
+      }
+
+      .venue-feature img {
+        aspect-ratio: 4 / 3;
       }
 
       h2 {
@@ -722,17 +769,17 @@
       }
 
       .date-info {
-        padding: 16px 14px 12px;
+        padding: 18px 16px 14px;
       }
 
       .date-info .day {
-        font-size: 26px;
+        font-size: 29px;
         white-space: normal;
       }
 
       .ticket-action {
         justify-content: flex-start;
-        padding: 10px 14px 14px;
+        padding: 12px 16px 16px;
       }
 
       .ticket-action .button {
@@ -842,7 +889,6 @@
         <div class="section-grid">
           <div class="section-media">
             <h2>Om operan</h2>
-            <img class="section-photo" src="assets/ridhuset.jpg" alt="Interiör från ridhuset på Orlångens Ridsällskap" />
           </div>
           <div>
             <p class="body-large">
@@ -873,6 +919,9 @@
             </div>
           </div>
         </div>
+        <figure class="venue-feature" aria-label="Interiör från ridhuset på Orlångens Ridsällskap">
+          <img src="assets/ridhuset.jpg" alt="Interiör från ridhuset på Orlångens Ridsällskap" />
+        </figure>
       </section>
 
       <section class="content" id="biljetter">
