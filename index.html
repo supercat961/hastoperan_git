@@ -585,6 +585,34 @@
       line-height: 1.38;
     }
 
+    .faq-list {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.44fr) minmax(0, 1fr);
+      gap: 28px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.22;
+      font-weight: 680;
+      letter-spacing: 0;
+    }
+
+    .faq-item p {
+      margin: 0;
+      max-width: 680px;
+    }
+
     footer {
       max-width: var(--max);
       margin: 0 auto;
@@ -815,6 +843,20 @@
         line-height: 1.3;
       }
 
+      .faq-list {
+        margin-top: 4px;
+      }
+
+      .faq-item {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding: 18px 0;
+      }
+
+      .faq-item h3 {
+        font-size: 16px;
+      }
+
       footer {
         padding: 34px 16px 46px;
       }
@@ -857,6 +899,7 @@
           <a href="#om">Om</a>
           <a href="#biljetter">Biljetter</a>
           <a href="#medverkande">Medverkande</a>
+          <a href="#faq">FAQ</a>
           <a href="#kontakt">Kontakt</a>
         </div>
       </nav>
@@ -1110,6 +1153,48 @@
               <div class="role">Produktionsproducent</div>
             </div>
           </a>
+        </div>
+      </section>
+
+      <section class="content" id="faq">
+        <div class="section-grid">
+          <h2>Frågor och svar</h2>
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3>Hur lång är föreställningen?</h3>
+              <p>Hästoperan är 2 timmar och 30 minuter, inklusive paus. Du bör vara där åtminstone 30 minuter innan föreställningen börjar.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Hur lång är pausen?</h3>
+              <p>Pausen är 30 minuter.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Varför börjar föreställningen 19.30?</h3>
+              <p>Föreställningen börjar 19.30 därför att den anpassar sig efter skymningsljuset. Första akten kommer använda sig av det naturliga ljuset från solnedgången, medan akt 2, som tar vid 45 minuter efter solnedgång, kommer använda sig av vår stora ljusrigg för att belysa rummet.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Hur tar jag mig till Balingsta gård och Orlångens Ridsällskap?</h3>
+              <p>Du tar dig till Balingsta gård / Orlångens Ridsällskap lättast med bil, men det är begränsat med parkeringsplatser. Du kan också ta buss 744 och 709 från Huddinge centrum till hållplats Balingstavägen. Därifrån går du genom den vackra allén som leder till ridhuset i ungefär 20 minuter. Det kommer vara skyltat.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Kommer det finnas fika?</h3>
+              <p>Det kommer säljas fika och alkoholfri dryck.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Kan jag köpa biljett på plats?</h3>
+              <p>Det går att köpa biljett på plats om det skulle finnas biljetter kvar.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Är gradängen tillgänglighetsanpassad?</h3>
+              <p>Gradängen är tillgänglighetsanpassad, men platserna är begränsade för personer med till exempel rullstol. Vid köp av biljett, maila vår producent och specificera dina behov. Rullator lämnas helst utanför ridhuset.</p>
+            </article>
+          </div>
         </div>
       </section>
 
