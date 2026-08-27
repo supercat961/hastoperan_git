@@ -585,6 +585,44 @@
       line-height: 1.38;
     }
 
+    .supporter-logos {
+      max-width: 740px;
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 24px 26px;
+    }
+
+    .supporter-logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 74px;
+    }
+
+    .supporter-logo img {
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .supporter-logo--konstnarsnamnden img {
+      max-width: 240px;
+      max-height: 92px;
+    }
+
+    .supporter-logo--region img {
+      max-width: 230px;
+      max-height: 116px;
+    }
+
+    .supporter-logo--huddinge img {
+      max-width: 218px;
+      max-height: 74px;
+    }
+
     .faq-list {
       display: grid;
       gap: 0;
@@ -855,6 +893,22 @@
 
       .faq-item h3 {
         font-size: 16px;
+      }
+
+      .supporter-logos {
+        gap: 22px;
+        margin-top: 26px;
+      }
+
+      .supporter-logo {
+        width: 100%;
+        min-height: auto;
+      }
+
+      .supporter-logo--konstnarsnamnden img,
+      .supporter-logo--region img,
+      .supporter-logo--huddinge img {
+        max-width: 100%;
       }
 
       footer {
@@ -1221,6 +1275,17 @@
             <p class="supporters">
               Projektet stöds av Kulturrådet, Konstnärsnämnden, Region Stockholm, Huddinge kommun, Helge Ax:son Johnsons stiftelse, Föreningen Svenska Tonsättare och Svensk Musik. Projektet har även samarbeten med Orlångens Ridsällskap, Balettakademien Stockholm, Transit Kulturinkubator, ABF Stockholm och JILLAT Samiskt danscentrum.
             </p>
+            <div class="supporter-logos" aria-label="Stödgivare">
+              <div class="supporter-logo supporter-logo--konstnarsnamnden">
+                <img src="assets/konstnarsnamnden-logo.png" alt="Konstnärsnämnden" loading="lazy" decoding="async" />
+              </div>
+              <div class="supporter-logo supporter-logo--region">
+                <img src="assets/region-stockholm-stod-logo.png" alt="Med stöd från Region Stockholm" loading="lazy" decoding="async" />
+              </div>
+              <div class="supporter-logo supporter-logo--huddinge">
+                <img src="assets/huddinge-kommun-logo.png" alt="Huddinge kommun" loading="lazy" decoding="async" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
