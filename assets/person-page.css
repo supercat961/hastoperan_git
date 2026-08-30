@@ -79,3 +79,21 @@ p {
 .bio p {
   max-width: none;
 }
+
+.name-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 620px;
+}
+
+.name-list li {
+  border-top: 1px solid rgba(17, 17, 17, 0.16);
+  padding-top: 12px;
+  color: #111;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 620;
+}
