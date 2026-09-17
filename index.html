@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hästoperan</title>
-  <meta name="description" content="Hästoperan är en nyskriven interdisciplinär opera som framförs i ridhuset på Orlångens Ridsällskap i Huddinge i augusti 2026." />
+  <meta name="description" content="Hästoperan är en nyskriven interdisciplinär opera som framfördes i ridhuset på Orlångens Ridsällskap i Huddinge den 28-30 augusti 2026." />
   <style>
     :root {
       --bg: #ffffff;
@@ -202,6 +202,23 @@
       white-space: nowrap;
     }
 
+    .hero-kicker {
+      margin: 18px 0 10px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 760;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 440px;
+      margin: 0 0 24px;
+      color: rgba(17, 17, 17, 0.76);
+      font-size: clamp(18px, 1.45vw, 22px);
+      line-height: 1.32;
+    }
+
     h1 {
       margin: 0 0 24px;
       color: var(--ink);
@@ -364,132 +381,127 @@
       margin-bottom: 22px;
     }
 
-    .facts {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) max-content;
-      gap: 12px;
-      margin-top: 24px;
-      align-items: start;
-    }
-
-    .fact, .ticket-card, .date-card {
-      border: 1px solid var(--line);
-      background: var(--surface);
-    }
-
-    .fact {
-      padding: 16px;
-    }
-
-    .date-fact {
-      width: 220px;
-    }
-
-    .fact strong {
-      display: block;
-      color: var(--accent);
-      margin-bottom: 7px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-    }
-
-    .fact a {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    .fact a:hover {
-      color: var(--accent-deep);
-    }
-
-    .travel-note {
-      margin: 12px 0 0;
-      color: rgba(17, 17, 17, 0.62);
-      font-size: 13px;
-      line-height: 1.42;
-    }
-
-    .ticket-days {
-      display: grid;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .date-card {
-      display: grid;
-      grid-template-columns: minmax(300px, 1fr) max-content;
-      gap: 0;
-      overflow: hidden;
-      transition: border-color 160ms ease, background 160ms ease;
-    }
-
-    .date-card:hover {
-      border-color: rgba(169, 52, 36, 0.5);
-      background: #fbfbfa;
-    }
-
-    .date-info {
-      padding: 22px 24px;
-      border-right: 1px solid var(--line);
-      background: var(--paper);
-    }
-
-    .date-info .day {
-      color: var(--ink);
-      font-size: clamp(28px, 2.75vw, 38px);
-      line-height: 1;
-      letter-spacing: 0;
-      font-weight: 680;
-      white-space: nowrap;
-    }
-
-    .date-info .meta {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 680;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .ticket-options {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      min-width: 240px;
-      background: #fff;
-    }
-
-    .ticket-action {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      width: 100%;
-    }
-
-    .ticket-action .button {
-      width: 100%;
-      min-height: 56px;
-      padding: 0 28px;
-      font-size: 13px;
-      background: var(--ink);
-      border-color: var(--ink);
-    }
-
-    .ticket-action .button:hover {
-      background: var(--accent);
-      border-color: var(--accent-deep);
-    }
-
     .people-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
       margin-top: 42px;
+    }
+
+    .showreel {
+      margin-top: 34px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+
+    .reel-frame {
+      position: relative;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      background: var(--horse-black);
+      border: 1px solid var(--line);
+    }
+
+    .reel-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.03) brightness(0.98);
+    }
+
+    .reel-control {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(13, 13, 13, 0.54);
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: background 160ms ease, border-color 160ms ease;
+    }
+
+    .reel-control:hover,
+    .reel-control:focus-visible {
+      background: rgba(169, 52, 36, 0.86);
+      border-color: rgba(255, 255, 255, 0.72);
+      outline: none;
+    }
+
+    .reel-control--prev { left: 16px; }
+    .reel-control--next { right: 16px; }
+
+    .reel-count {
+      position: absolute;
+      right: 16px;
+      bottom: 14px;
+      z-index: 2;
+      padding: 6px 9px;
+      color: #fff;
+      background: rgba(13, 13, 13, 0.62);
+      font-size: 12px;
+      font-weight: 720;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .reel-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 0 0;
+      color: rgba(17, 17, 17, 0.68);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .photo-credit,
+    .reel-caption span:last-child {
+      color: var(--accent);
+      font-weight: 720;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .reel-thumbs {
+      display: grid;
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .reel-thumb {
+      position: relative;
+      aspect-ratio: 3 / 2;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--horse-black);
+      cursor: pointer;
+    }
+
+    .reel-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.1) brightness(0.76);
+      transition: filter 160ms ease, transform 160ms ease;
+    }
+
+    .reel-thumb:hover img,
+    .reel-thumb.is-active img,
+    .reel-thumb:focus-visible img {
+      filter: grayscale(0) contrast(1.04) brightness(0.98);
+      transform: scale(1.03);
+    }
+
+    .reel-thumb.is-active {
+      border-color: var(--accent);
     }
 
     .people-list {
@@ -649,34 +661,6 @@
       max-height: 86px;
     }
 
-    .faq-list {
-      display: grid;
-      gap: 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .faq-item {
-      display: grid;
-      grid-template-columns: minmax(220px, 0.44fr) minmax(0, 1fr);
-      gap: 28px;
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .faq-item h3 {
-      margin: 0;
-      color: var(--ink);
-      font-size: 17px;
-      line-height: 1.22;
-      font-weight: 680;
-      letter-spacing: 0;
-    }
-
-    .faq-item p {
-      margin: 0;
-      max-width: 680px;
-    }
-
     footer {
       max-width: var(--max);
       margin: 0 auto;
@@ -694,16 +678,13 @@
       .hero { grid-template-columns: 1fr; }
       .hero-stage { min-height: 44vh; border-right: 0; border-bottom: 1px solid var(--line); }
       .hero-info { min-height: auto; padding: 42px 28px 56px; }
-      .section-grid, .facts, .people-grid, .people-list, .date-card, .ticket-options { grid-template-columns: 1fr; }
+      .section-grid, .people-grid, .people-list { grid-template-columns: 1fr; }
       .people-list { grid-template-columns: repeat(2, 1fr); }
       .section-media { gap: 22px; }
       #om::after {
         inset: 22px -28vw 18px 12%;
         opacity: 0.09;
       }
-      .date-info { border-right: 0; border-bottom: 1px solid var(--line); }
-      .ticket-card { border-right: 0; border-bottom: 1px solid var(--line); }
-      .ticket-options { min-width: 0; }
       section.content { padding: 46px 24px; }
       h1 { font-size: clamp(42px, 13.5vw, 76px); }
       h2 { font-size: clamp(28px, 7vw, 40px); }
@@ -778,6 +759,16 @@
         flex-wrap: nowrap;
       }
 
+      .hero-kicker {
+        margin-top: 14px;
+      }
+
+      .hero-copy {
+        max-width: none;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
       h1 {
         margin-bottom: 14px;
         font-size: clamp(42px, 14vw, 56px);
@@ -834,53 +825,50 @@
         line-height: 1.3;
       }
 
-      .facts {
-        gap: 8px;
-        margin-top: 20px;
-      }
-
-      .fact {
-        padding: 14px;
-      }
-
-      .date-fact {
-        width: 100%;
-      }
-
-      .travel-note {
-        font-size: 13px;
-      }
-
-      .ticket-days {
-        gap: 12px;
-      }
-
-      .date-card {
-        box-shadow: none;
-      }
-
-      .date-info {
-        padding: 18px 16px 14px;
-      }
-
-      .date-info .day {
-        font-size: 29px;
-        white-space: normal;
-      }
-
-      .ticket-action {
-        justify-content: flex-start;
-        padding: 12px 16px 16px;
-      }
-
-      .ticket-action .button {
-        width: 100%;
-      }
-
       .people-list {
         grid-template-columns: 1fr;
         gap: 8px;
         margin-top: 22px;
+      }
+
+      .showreel {
+        margin-top: 26px;
+        padding-top: 18px;
+      }
+
+      .reel-frame {
+        aspect-ratio: 4 / 3;
+      }
+
+      .reel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+      }
+
+      .reel-control--prev { left: 10px; }
+      .reel-control--next { right: 10px; }
+
+      .reel-count {
+        right: 10px;
+        bottom: 10px;
+        font-size: 11px;
+      }
+
+      .reel-caption {
+        display: grid;
+        gap: 6px;
+      }
+
+      .reel-thumbs {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .reel-thumb {
+        flex: 0 0 82px;
       }
 
       .person-row {
@@ -914,20 +902,6 @@
       .person-row-wide .group-names {
         gap: 3px 10px;
         font-size: 12px;
-      }
-
-      .faq-list {
-        margin-top: 4px;
-      }
-
-      .faq-item {
-        grid-template-columns: 1fr;
-        gap: 9px;
-        padding: 18px 0;
-      }
-
-      .faq-item h3 {
-        font-size: 16px;
       }
 
       .supporter-logos {
@@ -987,9 +961,9 @@
         </a>
         <div class="nav-links">
           <a href="#om">Om</a>
-          <a href="#biljetter">Biljetter</a>
+          <a href="#bilder">Bilder</a>
           <a href="#medverkande">Medverkande</a>
-          <a href="#faq">FAQ</a>
+          <a href="#stod">Tack</a>
           <a href="#kontakt">Kontakt</a>
         </div>
       </nav>
@@ -997,20 +971,19 @@
 
     <section class="hero" id="top">
       <div class="hero-stage">
-        <img src="assets/hero-horse-wall.jpeg" alt="Häst och människa i ridhus" />
+        <img src="assets/3Q8A4895.jpg" alt="Häst och människa i ridhus under Hästoperan" />
       </div>
 
       <div class="hero-info">
         <h1 class="hero-title">
           <img class="hero-logo-large" src="assets/hastoperan-logo.png" alt="Hästoperan" />
         </h1>
-        <p class="hero-dates">
-          <span>28.08.2026</span>
-          <span>29.08.2026</span>
-          <span>30.08.2026</span>
+        <p class="hero-kicker">Dokumentation från ridhuset</p>
+        <p class="hero-copy">
+          Hästoperans föreställningar 28-30 augusti 2026 samlade musik, dans, ljus och hästarnas närvaro i Orlångens ridhus.
         </p>
         <div class="button-row">
-          <a class="button" href="#biljetter">Köp biljetter</a>
+          <a class="button" href="#bilder">Se bilder</a>
           <a class="button secondary" href="#om">Läs mer</a>
         </div>
       </div>
@@ -1035,69 +1008,60 @@
             <p>
               Publiken sitter nära ridhusets sand, ljus, ljud och dofter, på en plats där människor och hästar redan arbetar sida vid sida. Musik, rörelse och berättelse växer fram i samma rum som föreställningen utspelar sig i, nära och konkret.
             </p>
-
-            <div class="facts">
-              <div class="fact">
-                <strong>Plats</strong>
-                <a href="https://www.google.com/maps/search/?api=1&query=Orl%C3%A5ngens%20Rids%C3%A4llskap%20Huddinge" target="_blank" rel="noopener">Orlångens Ridsällskap, Huddinge</a>
-                <p class="travel-note">
-                  Det går att ta sig till Orlångens Ridsällskap med bil eller cykel. Det kommer finnas parkering vid gräsmattan bredvid stallet, där du kan swisha Orlångens Ridsällskap 20:- för parkeringsplats. Ingen P-vakt kommer att finnas. Du kan även resa med SL. Ta pendeln till Huddinge C och buss 744 eller 709 till Balingstavägen. Följ sedan allén på andra sidan vägen tills du anländer till Orlångens Ridsällskap. Sista SL-bussarna går 22.30 och 23.30.
-                </p>
-              </div>
-              <div class="fact date-fact">
-                <strong>Datum</strong>
-                28, 29 och 30 augusti 2026
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section class="content" id="biljetter">
+      <section class="content" id="bilder">
         <div class="section-grid">
-          <h2>Biljetter</h2>
+          <h2>Dokumentation</h2>
           <div>
             <p class="body-large">
-              Föreställningen spelas tre gånger i augusti 2026. Biljetter köps via respektive föreställningslänk.
+              Bilder från föreställningarna 28-30 augusti 2026.
             </p>
+            <p class="photo-credit">Foto: Bartosz Wozniak</p>
+          </div>
+        </div>
 
-            <div class="ticket-days">
-              <article class="date-card">
-                <div class="date-info">
-                  <div class="day">28 augusti</div>
-                  <div class="meta">Premiär</div>
-                </div>
-                <div class="ticket-options">
-                  <div class="ticket-action">
-                    <a class="button" href="https://billetto.se/e/hastoperan-berattelsen-om-jackie-och-candy-biljetter-1933778" target="_blank" rel="noopener">Köp biljett</a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="date-card">
-                <div class="date-info">
-                  <div class="day">29 augusti</div>
-                  <div class="meta">Föreställning 2</div>
-                </div>
-                <div class="ticket-options">
-                  <div class="ticket-action">
-                    <a class="button" href="https://billetto.se/e/hastoperan-berattelsen-om-jackie-och-candy-biljetter-1933780" target="_blank" rel="noopener">Köp biljett</a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="date-card">
-                <div class="date-info">
-                  <div class="day">30 augusti</div>
-                  <div class="meta">Föreställning 3</div>
-                </div>
-                <div class="ticket-options">
-                  <div class="ticket-action">
-                    <a class="button" href="https://billetto.se/e/hastoperan-berattelsen-om-jackie-och-candy-biljetter-1933779" target="_blank" rel="noopener">Köp biljett</a>
-                  </div>
-                </div>
-              </article>
-            </div>
+        <div class="showreel" data-showreel>
+          <div class="reel-frame">
+            <button class="reel-control reel-control--prev" type="button" aria-label="Föregående bild" data-reel-prev>&lsaquo;</button>
+            <img class="reel-image" src="assets/3Q8A4961.jpg" alt="Dokumentation från Hästoperan" data-reel-image />
+            <button class="reel-control reel-control--next" type="button" aria-label="Nästa bild" data-reel-next>&rsaquo;</button>
+            <div class="reel-count" data-reel-count>1 / 9</div>
+          </div>
+          <div class="reel-caption">
+            <span data-reel-caption>Föreställningsbild från Hästoperan, 28-30 augusti 2026.</span>
+            <span>Foto: Bartosz Wozniak</span>
+          </div>
+          <div class="reel-thumbs" aria-label="Välj bild">
+            <button class="reel-thumb is-active" type="button" aria-label="Visa bild 1" data-reel-index="0">
+              <img src="assets/3Q8A4961.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
+            <button class="reel-thumb" type="button" aria-label="Visa bild 2" data-reel-index="1">
+              <img src="assets/3Q8A5074.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
+            <button class="reel-thumb" type="button" aria-label="Visa bild 3" data-reel-index="2">
+              <img src="assets/3Q8A5306.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
+            <button class="reel-thumb" type="button" aria-label="Visa bild 4" data-reel-index="3">
+              <img src="assets/3Q8A4971.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
+            <button class="reel-thumb" type="button" aria-label="Visa bild 5" data-reel-index="4">
+              <img src="assets/3Q8A5084.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
+            <button class="reel-thumb" type="button" aria-label="Visa bild 6" data-reel-index="5">
+              <img src="assets/3Q8A5203.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
+            <button class="reel-thumb" type="button" aria-label="Visa bild 7" data-reel-index="6">
+              <img src="assets/3Q8A5082.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
+            <button class="reel-thumb" type="button" aria-label="Visa bild 8" data-reel-index="7">
+              <img src="assets/3Q8A5136.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
+            <button class="reel-thumb" type="button" aria-label="Visa bild 9" data-reel-index="8">
+              <img src="assets/3Q8A4895.jpg" alt="" loading="lazy" decoding="async" />
+            </button>
           </div>
         </div>
       </section>
@@ -1284,54 +1248,12 @@
         </div>
       </section>
 
-      <section class="content" id="faq">
-        <div class="section-grid">
-          <h2>Frågor och svar</h2>
-          <div class="faq-list">
-            <article class="faq-item">
-              <h3>Hur lång är föreställningen?</h3>
-              <p>Hästoperan är 2 timmar och 10 minuter, inklusive paus. Du bör vara där åtminstone 30 minuter innan föreställningen börjar.</p>
-            </article>
-
-            <article class="faq-item">
-              <h3>Hur lång är pausen?</h3>
-              <p>Pausen är 30 minuter.</p>
-            </article>
-
-            <article class="faq-item">
-              <h3>Varför börjar föreställningen 19.30?</h3>
-              <p>Föreställningen börjar 19.30 därför att den anpassar sig efter skymningsljuset. Första akten kommer använda sig av det naturliga ljuset från solnedgången, medan akt 2, som tar vid 45 minuter efter solnedgång, kommer använda sig av vår stora ljusrigg för att belysa rummet.</p>
-            </article>
-
-            <article class="faq-item">
-              <h3>Hur tar jag mig till Balingsta gård och Orlångens Ridsällskap?</h3>
-              <p>Det går att ta sig till Balingsta gård och Orlångens Ridsällskap med bil eller cykel. Det kommer finnas parkering vid gräsmattan bredvid stallet, där du kan swisha Orlångens Ridsällskap 20 kr för parkeringsplats. Ingen p-vakt kommer att finnas. Om du har fler frågor om parkeringen är du välkommen att höra av dig till vår producent. Du kan också resa med SL: ta buss 744 eller 709 från Huddinge centrum till hållplats Balingstavägen. Därifrån går du genom den vackra allén som leder till ridhuset i ungefär 20 minuter. Det kommer vara skyltat. Sista SL-bussarna går 22.30 och 23.30. Föreställningen kommer sluta så att du hinner med bussen 22.30, men då behöver du börja röra dig ganska kvickt efter föreställningens slut.</p>
-            </article>
-
-            <article class="faq-item">
-              <h3>Kommer det finnas fika?</h3>
-              <p>Det kommer säljas fika och alkoholfri dryck.</p>
-            </article>
-
-            <article class="faq-item">
-              <h3>Kan jag köpa biljett på plats?</h3>
-              <p>Det går att köpa biljett på plats om det skulle finnas biljetter kvar.</p>
-            </article>
-
-            <article class="faq-item">
-              <h3>Är gradängen tillgänglighetsanpassad?</h3>
-              <p>Gradängen är tillgänglighetsanpassad, men platserna är begränsade för personer med till exempel rullstol. Vid köp av biljett, maila vår producent och specificera dina behov. Rullator lämnas helst utanför ridhuset.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section class="content" id="stod">
         <div class="section-grid">
-          <h2>Stöd & samarbeten</h2>
+          <h2>Tack</h2>
           <div>
             <p class="supporters">
-              Projektet stöds av Kulturrådet, Konstnärsnämnden, Region Stockholm, Huddinge kommun, 2BK Arkitekter, KAD, Helge Ax:son Johnsons stiftelse, Föreningen Svenska Tonsättare och Svensk Musik. Projektet har även samarbeten med Orlångens Ridsällskap, Balettakademien Stockholm, Transit Kulturinkubator, ABF Stockholm och JILLAT Samiskt danscentrum.
+              Hästoperans föreställningar 28-30 augusti 2026 genomfördes med stöd från Kulturrådet, Konstnärsnämnden, Region Stockholm, Huddinge kommun, 2BK Arkitekter, KAD, Helge Ax:son Johnsons stiftelse, Föreningen Svenska Tonsättare och Svensk Musik. Projektet genomfördes även i samarbete med Orlångens Ridsällskap, Balettakademien Stockholm, Transit Kulturinkubator, ABF Stockholm och JILLAT Samiskt danscentrum.
             </p>
             <div class="supporter-logos" aria-label="Stödgivare">
               <div class="supporter-logo supporter-logo--konstnarsnamnden">
@@ -1359,10 +1281,58 @@
         kajsaantonsson (at) msn.com
       </p>
       <p>
-        Fotograf: Susanne Kraft<br />
-        Bilder: Anna Nygren
+        Föreställningsbilder: Bartosz Wozniak
       </p>
     </footer>
   </div>
+  <script>
+    (() => {
+      const reel = document.querySelector("[data-showreel]");
+      if (!reel) return;
+
+      const slides = [
+        { src: "assets/3Q8A4961.jpg", alt: "Två gestalter i motljus under Hästoperan." },
+        { src: "assets/3Q8A5074.jpg", alt: "Scenbild i mörker med ljus och projektion under Hästoperan." },
+        { src: "assets/3Q8A5306.jpg", alt: "Sångare i rött scenljus under Hästoperan." },
+        { src: "assets/3Q8A4971.jpg", alt: "Ensemble i lila ljus i ridhuset under Hästoperan." },
+        { src: "assets/3Q8A5084.jpg", alt: "Dansare i blått scenljus under Hästoperan." },
+        { src: "assets/3Q8A5203.jpg", alt: "Sångare vid hö i ridhuset under Hästoperan." },
+        { src: "assets/3Q8A5082.jpg", alt: "Silhuett i blått motljus under Hästoperan." },
+        { src: "assets/3Q8A5136.jpg", alt: "Två medverkande i grönt ljus inför publiken under Hästoperan." },
+        { src: "assets/3Q8A4895.jpg", alt: "Häst och människa i ridhuset under Hästoperan." }
+      ];
+
+      const image = reel.querySelector("[data-reel-image]");
+      const count = reel.querySelector("[data-reel-count]");
+      const caption = reel.querySelector("[data-reel-caption]");
+      const thumbs = Array.from(reel.querySelectorAll("[data-reel-index]"));
+      let current = 0;
+
+      const show = (index) => {
+        current = (index + slides.length) % slides.length;
+        const slide = slides[current];
+        image.src = slide.src;
+        image.alt = slide.alt;
+        count.textContent = `${current + 1} / ${slides.length}`;
+        caption.textContent = "Föreställningsbild från Hästoperan, 28-30 augusti 2026.";
+        thumbs.forEach((thumb, thumbIndex) => {
+          thumb.classList.toggle("is-active", thumbIndex === current);
+          thumb.setAttribute("aria-current", thumbIndex === current ? "true" : "false");
+        });
+      };
+
+      reel.querySelector("[data-reel-prev]").addEventListener("click", () => show(current - 1));
+      reel.querySelector("[data-reel-next]").addEventListener("click", () => show(current + 1));
+      thumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => show(Number(thumb.dataset.reelIndex)));
+      });
+      reel.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") show(current - 1);
+        if (event.key === "ArrowRight") show(current + 1);
+      });
+
+      show(0);
+    })();
+  </script>
 </body>
 </html>
